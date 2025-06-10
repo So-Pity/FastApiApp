@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --color-text-main: #E2E8F0;
+  --color-text-title: #6D7E9C;
+  --font-text-main: 18px;
+  --font-text-title: 24px;
+  --color-bg-main: #0F172A;
+  --color-bg-title: #172A46;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-main);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+  padding: 30px 30px;
+  border-radius: 20px;
+  background-color: var(--color-bg-title);
+}
+
+.app-title {
+  text-align: center;
+  color: var(--color-text-main);
+}
+
+.description-wrapp {
+  text-align: center;
+  color: var(--color-text-title);
+  font-size: var(--font-text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.button-title{
+  font-weight: bold;
+  font-size: var(--font-text-main);
+  color: var(--color-text-main);
+}
+
+.button-link {
+  font-size: 0px;
+  border-radius: 20px;
+}
+
+.button-logo {
+  width: 50px;
+  transition: scale 0.3s;
+}
+
+.button-logo:hover {
+  scale: 1.1;
+}

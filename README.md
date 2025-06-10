@@ -1,1 +1,2 @@
 # FastApiApp
+Wallet operations app

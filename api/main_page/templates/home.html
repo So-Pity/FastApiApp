@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallet API</title>
+  <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', path='/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+  <main class="main-container">
+    <h1 class="app-title">Welcome to Wallet API</h1>
+    <div class="description-wrapp">
+      <p>This service provides a simple API for managing wallet</p>
+      <p>Documentation available in two formats:</p>
+    </div>
+    <div class="button-wrapper">
+      <div class="button">
+        <p class="button-title">Swagger</p>
+        <a class="button-link" href="{{ swagger }}" target="_blank">
+          <img class="button-logo" src="{{ url_for('static', path='/img/swagger.svg') }}" alt="swagger">
+        </a>
+      </div>
+      <div class="button">
+        <p class="button-title">Redoc</p>
+        <a class="button-link" href="{{ redoc }}" target="_blank">
+          <img class="button-logo" src="{{ url_for('static', path='/img/redoc.svg') }}" alt="redoc">
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
