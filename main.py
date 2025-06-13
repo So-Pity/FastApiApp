@@ -1,8 +1,10 @@
 import uvicorn
+
 from fastapi import FastAPI, HTTPException
 from fastapi.exceptions import RequestValidationError
-from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
+
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from modules.logger import logger
 from modules.middleware import log_middleware
@@ -11,7 +13,7 @@ from modules.exceptions import http_exception_handler, validation_exception_hand
 from api.main_page.router import router as router_home
 
 from settings import (
-    ConstSettings, 
+    ConstSettings,
     settings
 )
 
@@ -32,11 +34,11 @@ class Application(FastAPI):
                 "operationsSorter": "method",
             },
             openapi_url="/openapi.yaml",
-            lifespan=self.lifespan
         )
         self.run_startup_actions()
 
     def run_startup_actions(self):
+        """Set up routes, middleware and exception handlers"""
         self.mount("/static", router_home)
         self.include_router(router=router_home)
         self.add_middleware(BaseHTTPMiddleware, dispatch=log_middleware)
@@ -47,4 +49,4 @@ class Application(FastAPI):
 app = Application()
 
 if __name__ == "__main__":
-  uvicorn.run("main:app", host="0.0.0.0", port=9010, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=9010, reload=True)
