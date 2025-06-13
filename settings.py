@@ -38,6 +38,11 @@ class Settings(BaseSettings):
         default="admin",
         description="Пароль пользователя для подключения к базе данных",
     )
+    DB_ECHO_POOL: Literal["debug"] | bool = Field(
+        default=False,
+        description="Необходимо ли выводить в консоль все взаимодействие с базой данной",
+        examples=["False", "True", "debug"],
+    )
     DB_POOL_SIZE: int = Field(
         default=10,
         description="Максимальное количество открытых соединений в открытом пулле к базе данных",
