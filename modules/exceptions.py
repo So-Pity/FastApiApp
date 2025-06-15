@@ -135,4 +135,6 @@ class ValidationError(HTTPException):
         super().__init__(status.HTTP_422_UNPROCESSABLE_ENTITY, headers)
 
 class ExceptionMessages(str, Enum):
-    GET_EXCEPTION = "GET_WALLET_ERROR"
+    GET_WALLET_ERROR = "GET_WALLET_ERROR"
+    GET_WALLET_BY_ID_EXCEPTION = "GET_WALLET_BY_ID_ERROR"
+    DELETE_WALLET_ERROR = "DELETE_WALLET_ERROR"
